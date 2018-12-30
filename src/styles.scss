@@ -1,1 +1,22 @@
 /* You can add global styles to this file, and also import other style files */
+body {
+  background: rgb(44, 44, 44);
+}
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+app-root {
+  display: grid;
+  height: 100%;
+  grid-gap: 1rem;
+  grid-template-areas: 'header' 'menu' 'list' 'footer';
+  grid-template-rows: 80px auto 1fr;
+}
+@media screen and (min-width: 480px) {
+  /*DESKTOP*/
+  app-root {
+    grid-template-areas: "header menu" "list list" "footer footer";
+  }
+}

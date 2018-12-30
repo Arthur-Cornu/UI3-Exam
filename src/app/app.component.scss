@@ -1,0 +1,15 @@
+header {
+  display: flex;
+  grid-area: header;
+}
+footer {
+  grid-area: footer;
+  min-height: 2em;
+  position: relative;
+}
+app-toolbar {
+  grid-area: menu;
+}
+body{
+  grid-area: list;
+}

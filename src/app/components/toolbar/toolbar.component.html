@@ -1,0 +1,8 @@
+<menu>
+  <input id="inc" (click)="inc()" type="button" value="F">
+  <input id="dec" (click)="dec()" type="button" value="S">
+  <input id="plus" (click)="plus()" type="button" value="+">
+  <input id="min" (click)="min()" type="button" value="-">
+  <input id="slider" type="range" name="speed" [ngModel]="range" (ngModelChange)="saverange($event)" min="500" max="800"/>
+  <input id="play" type="button" (click)="startStop()" value="{{started === true ? '❚❚' : '►'}}">
+</menu>
