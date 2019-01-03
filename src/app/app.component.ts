@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
 import {Room} from './model/room';
+import {Observable} from 'rxjs';
+import {RoomService} from '../services/room.service';
 
 @Component({
   selector: 'app-root',
@@ -12,9 +14,14 @@ export class AppComponent {
   private rooms: Room[];
   title = 'ExamUI3Classroom';
 
-  constructor() {
+  constructor(private roomService: RoomService) {
     this.isList = true;
-    this.rooms = [new Room(0, 'GR001', 10, 9), new Room(0, 'GR002', 20, 1, 'AULA', 'Room', true), new Room(0, 'GR003', 30, 20, 'CLASSROOM', 'Room', true), new Room(0, 'GR004', 30, 15, 'AULA', 'Room', false)];
+    this.roomService.getRooms()
+      .subscribe(
+        room => this.rooms = room,
+        error => {
+          console.log(error as string);
+        });
   }
 
   list() {

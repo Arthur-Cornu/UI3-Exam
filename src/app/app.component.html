@@ -8,17 +8,9 @@
 </app-room-menu>
 <div *ngIf="isList" id="list-items">
   <app-list-item *ngFor="let room of rooms"
-                 [id]="room.id"
-                 [name]="room.name"
-                 [type]="room.type"
-                 [beamer]="room.beamer"
-                 [capacity]="room.capacity"
-                 [crowd]="room.crowd"
-                 [description]="room.description"
+                 [room]="room"
   ></app-list-item>
 </div>
 <div *ngIf="!isList" id="map-items">
   map
 </div>
-<footer>footer</footer>
-

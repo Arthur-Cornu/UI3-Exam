@@ -1,3 +1,5 @@
+import {Reservation} from './reservation';
+
 export class Room {
   id: number;
   name: string;
@@ -6,42 +8,25 @@ export class Room {
   crowd: number;
   beamer: boolean;
   type: string;
+  x: number;
+  y: number;
+  width: number;
+  height: number;
+  floor: number;
+  reservations: Reservation[];
 
-  constructor(id?: number, name?: string, capacity?: number, crowd?: number, type?: string, description?: string, beamer?: boolean) {
-    if (id) {
-      this.id = id;
-    } else {
-      this.id = -1;
-    }
-    if (name) {
-      this.name = name;
-    } else {
-      this.name = '';
-    }
-    if (description) {
-      this.description = description;
-    } else {
-      this.description = '';
-    }
-    if (capacity) {
-      this.capacity = capacity;
-    } else {
-      this.capacity = 0;
-    }
-    if (crowd) {
-      this.crowd = crowd;
-    } else {
-      this.crowd = 0;
-    }
-    if (beamer) {
-      this.beamer = beamer;
-    } else {
-      this.beamer = false;
-    }
-    if (type) {
-      this.type = type;
-    } else {
-      this.type = '';
-    }
+  constructor() {
+    this.id = -1;
+    this.name = '';
+    this.description = '';
+    this.type = '';
+    this.capacity = 0;
+    this.crowd = 0;
+    this.beamer = false;
+    this.floor = 0;
+    this.x = 0;
+    this.y = 0;
+    this.width = 0;
+    this.height = 0;
   }
 }

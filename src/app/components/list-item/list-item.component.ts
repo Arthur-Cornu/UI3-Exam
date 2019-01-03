@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {Color} from '../../model/color';
+import {Room} from '../../model/room';
 
 @Component({
   selector: 'app-list-item',
@@ -9,31 +10,19 @@ import {Color} from '../../model/color';
 export class ListItemComponent implements OnInit {
 
   constructor() {
-    this.id = -1;
-    this.name = ''; //
-    this.description = '';
-    this.type = '';
-    this.capacity = 0; //
-    this.crowd = 0; //
-    this.beamer = false;
     this.color = new Color(255, 0, 0);
   }
 
   color: Color;
-  @Input() id: number;
-  @Input() name: string;
-  @Input() description: string;
-  @Input() capacity: number;
-  @Input() crowd: number;
-  @Input() beamer: boolean;
-  @Input() type: string;
+  ocupied?: boolean;
+  @Input() room: Room;
 
   ngOnInit() {
     this.updateColor();
   }
 
   updateColor() {
-    const n = this.crowd / this.capacity * 100;
+    const n = this.room.crowd / this.room.capacity * 100;
     const r = Math.round((255 * n) / 100);
     const g = Math.round((255 * (100 - n)) / 100);
     this.color = new Color(r, g, 0);

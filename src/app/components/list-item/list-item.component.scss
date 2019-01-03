@@ -8,16 +8,25 @@
 }
 
 span {
+  position: relative;
+  border: solid 1px;
+
   div {
     width: 3em;
     font-size: x-small;
     color: #cfcfcf;
   }
 
+  p {
+    margin: auto 1%;
+    color: #aeaeae;
+    position: relative;
+  }
+
   box-sizing: border-box;
   display: flex;
   margin: 3% 2%;
-  height: 1.5em;
+
 }
 
 input {
