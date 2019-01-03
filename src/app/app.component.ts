@@ -14,7 +14,7 @@ export class AppComponent {
 
   constructor() {
     this.isList = true;
-    this.rooms = [new Room(0, 'GR001', 10, 9), new Room(0, 'GR002', 20, 1, 'CAFETARIA', 'Room', true), new Room(0, 'GR003', 30, 20), new Room(0, 'GR004', 30, 15)];
+    this.rooms = [new Room(0, 'GR001', 10, 9), new Room(0, 'GR002', 20, 1, 'AULA', 'Room', true), new Room(0, 'GR003', 30, 20, 'CLASSROOM', 'Room', true), new Room(0, 'GR004', 30, 15, 'AULA', 'Room', false)];
   }
 
   list() {

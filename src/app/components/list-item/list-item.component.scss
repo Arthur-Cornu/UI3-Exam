@@ -8,14 +8,22 @@
 }
 
 span {
+  div {
+    width: 3em;
+    font-size: x-small;
+    color: #cfcfcf;
+  }
+
   box-sizing: border-box;
   display: flex;
-  margin: 1%;
+  margin: 3% 2%;
   height: 1.5em;
 }
-input{
-  margin: 1%;
+
+input {
+  height: 100%;
 }
+
 img {
   box-sizing: border-box;
   width: 1.5em;
