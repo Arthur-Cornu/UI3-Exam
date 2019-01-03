@@ -20,7 +20,7 @@ export class Room {
     this.name = '';
     this.description = '';
     this.type = '';
-    this.capacity = 0;
+    this.capacity = 1;
     this.crowd = 0;
     this.beamer = false;
     this.floor = 0;
@@ -28,5 +28,6 @@ export class Room {
     this.y = 0;
     this.width = 0;
     this.height = 0;
+    this.reservations = [];
   }
 }

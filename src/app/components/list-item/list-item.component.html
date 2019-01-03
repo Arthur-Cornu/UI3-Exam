@@ -2,7 +2,7 @@
   <p>Lokaal:{{room.name}}</p>
   <!--<input id="pop" type="range" min="0" max="{{capacity}}" value="{{crowd}}">-->
   <img [style.background-color]="updateColor()" src="../../../assets/crowd.png"/>
-  <div>{{room.capacity === 0 ? '' : room.crowd + '/' + room.capacity}}</div>
+  <div>{{occupied !== 2 ? '' : room.crowd + '/' + room.capacity}}</div>
   <img src="../../../assets/{{room.type}}.png"/>
 
 <img *ngIf="room.beamer" src="../../../assets/beamer.png"/>

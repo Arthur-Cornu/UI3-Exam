@@ -16,7 +16,6 @@ export class InMemoryDataService implements InMemoryDbService {
         'y': 0,
         'width': 5,
         'height': 4,
-        'capacity': 0,
         'beamer': false,
       },
       {
@@ -28,7 +27,6 @@ export class InMemoryDataService implements InMemoryDbService {
         'y': 0,
         'width': 5,
         'height': 4,
-        'capacity': 0,
         'beamer': true,
       }
     ];
