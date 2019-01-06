@@ -1,0 +1,7 @@
+<menu>
+  <input type="button" (click)="close()" value="x">
+  <div><input type="checkbox" [ngModel]="naam_" (ngModelChange)="onFilterChange('naam_')"><label>Naam</label></div>
+  <div><input type="checkbox" [ngModel]="type_" (ngModelChange)="onFilterChange('type_')"><label>Type</label></div>
+  <div><input type="checkbox" [ngModel]="beamer_" (ngModelChange)="onFilterChange('beamer_')"><label>Beamer</label></div>
+  <div><input type="checkbox" [ngModel]="drukte_" (ngModelChange)="onFilterChange('drukte_')"><label>Drukte</label></div>
+</menu>

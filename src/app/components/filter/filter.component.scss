@@ -1,0 +1,22 @@
+menu {
+  background: #1e1e1e;
+  padding: 1rem;
+  margin: 1rem;
+  box-sizing: border-box;
+  position: absolute;
+  z-index: 20;
+
+  div label {
+    color: white;
+  }
+
+  input[type=button] {
+    box-sizing: border-box;
+    position:absolute;
+    top:0;
+    right:0;
+    background: darkred;
+    border-color: crimson;
+    color: yellow;
+  }
+}

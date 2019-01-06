@@ -1,4 +1,4 @@
-header {
+app-header {
   display: flex;
   grid-area: header;
 }
@@ -7,9 +7,9 @@ footer {
   min-height: 2em;
   position: relative;
 }
-app-toolbar {
-  grid-area: menu;
-}
 body{
   grid-area: list;
+}
+@media screen and (min-width: 480px) {
+  /*DESKTOP*/
 }
