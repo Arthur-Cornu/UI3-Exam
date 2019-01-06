@@ -4,13 +4,23 @@ menu {
   padding: 3px;
   background: #e9e9e9;
   box-sizing: border-box;
+  display: flex;
   input {
     background: #1e1e1e;
     color: white;
     box-sizing: border-box;
     margin: 0.3%;
     border: black solid 1px;
-    width: 24.2%;
+    width: 100%;
+  }
+  .desktopOnly {
+    display: none;
+  }
+  @media screen and (min-width: 480px) {
+    /*DESKTOP*/
+    .desktopOnly {
+      display: inline;
+    }
   }
 }
 

@@ -10,13 +10,19 @@ html, body {
 app-root {
   display: grid;
   height: 100%;
-  grid-gap: 1rem;
+  grid-gap: 0;
   grid-template-areas: 'header' 'menu' 'list' 'footer';
   grid-template-rows: 80px auto 1fr;
+}
+app-room-menu{
+  grid-area: menu;
+}
+app-list-item{
+  grid-area: list;
 }
 @media screen and (min-width: 480px) {
   /*DESKTOP*/
   app-root {
-    grid-template-areas: "header menu" "list list" "footer footer";
+    grid-template-areas: 'header header' 'menu menu' 'list detail';
   }
 }

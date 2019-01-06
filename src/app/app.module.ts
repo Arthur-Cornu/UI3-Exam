@@ -9,19 +9,23 @@ import {ListItemComponent} from './components/list-item/list-item.component';
 import {HttpClientModule} from '@angular/common/http';
 import {InMemoryDataService} from '../services/in-memory-data.service';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { FilterComponent } from './components/filter/filter.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     RoomMenuComponent,
-    ListItemComponent
+    ListItemComponent,
+    FilterComponent,
   ],
   imports: [
     FormsModule,
     BrowserModule,
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
+    NgMultiSelectDropDownModule.forRoot(),
   ],
   providers: [],
   bootstrap: [AppComponent]

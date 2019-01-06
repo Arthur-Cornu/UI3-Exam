@@ -1,9 +1,8 @@
 <span>
-  <p>Lokaal:{{room.name}}</p>
+  <p *ngIf="naam">Lokaal:{{room.name}}</p>
   <!--<input id="pop" type="range" min="0" max="{{capacity}}" value="{{crowd}}">-->
-  <img [style.background-color]="updateColor()" src="../../../assets/crowd.png"/>
-  <div>{{occupied !== 2 ? '' : room.crowd + '/' + room.capacity}}</div>
-  <img src="../../../assets/{{room.type}}.png"/>
-
-<img *ngIf="room.beamer" src="../../../assets/beamer.png"/>
+  <img *ngIf="drukte" [style.background-color]="updateColor()" src="../../../assets/crowd.png"/>
+  <div *ngIf="drukte">{{occupied !== 2 ? '' : room.crowd + '/' + room.capacity}}{{occupied === 1 ? timer : ''}}{{occupied == 0 ? 'vrij' : ''}}</div>
+  <img *ngIf="type" src="../../../assets/{{room.type}}.png" onerror="this.src='../../../assets/404.png'"/>
+<img *ngIf="room.beamer && beamer_" src="../../../assets/beamer.png"/>
 </span>
