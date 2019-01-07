@@ -18,6 +18,23 @@ export class InMemoryDataService implements InMemoryDbService {
         'height': 4,
         'beamer': false,
       }, {
+        'id': 2,
+        'name': 'GR102',
+        'type': 'aula',
+        'floor': 1,
+        'x': 0,
+        'y': 0,
+        'width': 5,
+        'height': 4,
+        'beamer': true,
+        'reservations': [{
+          'start': new Date((new Date().getTime() - (1 * 60 * 60 * 1000))).getTime(),
+          'end': new Date((new Date().getTime() + (2 * 60 * 60 * 1000))).getTime()
+        }, {
+          'start': new Date((new Date().getTime() - (2 * 60 * 60 * 1000))).getTime(),
+          'end': new Date((new Date().getTime() - (60 * 60 * 1000))).getTime()
+        }]
+      }, {
         'id': 3,
         'name': 'GR103',
         'type': 'cafetaria',
@@ -29,7 +46,63 @@ export class InMemoryDataService implements InMemoryDbService {
         'crowd': 1,
         'height': 4,
         'beamer': false,
+      },
+      {
+        'id': 4,
+        'name': 'GR104',
+        'type': 'classroom',
+        'floor': 1,
+        'x': 0,
+        'y': 0,
+        'width': 5,
+        'capacity': 0,
+        'crowd': 0,
+        'height': 4,
+        'beamer': true,
+      },
+
+      {
+        'id': 5,
+        'name': 'GR105',
+        'type': 'classroom',
+        'floor': 1,
+        'x': 0,
+        'y': 0,
+        'width': 5,
+        'height': 4,
+        'beamer': false,
       }, {
+        'id': 6,
+        'name': 'GR106',
+        'type': 'classroom',
+        'floor': 1,
+        'x': 0,
+        'y': 0,
+        'width': 5,
+        'height': 4,
+        'beamer': true,
+      }, {
+        'id': 7,
+        'name': 'GR107',
+        'type': 'classroom',
+        'floor': 1,
+        'x': 0,
+        'y': 0,
+        'width': 5,
+        'height': 4,
+        'beamer': true,
+      }, {
+        'id': 8,
+        'name': 'GR108',
+        'type': 'classroom',
+        'floor': 1,
+        'x': 0,
+        'y': 0,
+        'width': 5,
+        'height': 4,
+        'beamer': true,
+      },
+      {
         'id': 9,
         'name': 'GR109',
         'type': 'cafetaria',
@@ -55,22 +128,27 @@ export class InMemoryDataService implements InMemoryDbService {
         'beamer': false,
       },
       {
-        'id': 2,
-        'name': 'GR102',
-        'type': 'aula',
+        'id': 11,
+        'name': 'GR111',
+        'type': 'classroom',
         'floor': 1,
         'x': 0,
         'y': 0,
         'width': 5,
         'height': 4,
         'beamer': true,
-        'reservations': [{
-          'start': new Date((new Date().getTime() - (1 * 60 * 60 * 1000))).getTime(),
-          'end': new Date((new Date().getTime() + (2 * 60 * 60 * 1000))).getTime()
-        }, {
-          'start': new Date((new Date().getTime() - (2 * 60 * 60 * 1000))).getTime(),
-          'end': new Date((new Date().getTime() - (60 * 60 * 1000))).getTime()
-        }]
+      }
+      ,
+      {
+        'id': 12,
+        'name': 'GR112',
+        'type': 'classroom',
+        'floor': 1,
+        'x': 0,
+        'y': 0,
+        'width': 5,
+        'height': 4,
+        'beamer': false,
       }
     ];
     return {rooms};

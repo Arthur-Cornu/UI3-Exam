@@ -1,23 +1,5 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <app-header></app-header>
-<app-room-menu
-  (goList)="list()"
-  (goDown)="down()"
-  (goMap)="map()"
-  (goUp)="up()"
-  (toggle)="setSetting($event)"
->
-</app-room-menu>
-<div *ngIf="isList" id="list-items">
-  <app-list-item *ngFor="let room of rooms"
-                 [room]="room"
-                 [beamer_]="beamer_"
-                 [bezet]="bezet_"
-                 [type]="type_"
-                 [naam]="naam_"
-                 [drukte]="drukte_"
-  ></app-list-item>
-</div>
-<div *ngIf="!isList" id="map-items">
-  map
+<div>
+  <router-outlet></router-outlet>
 </div>

@@ -1,8 +1,22 @@
-<span>
-  <p *ngIf="naam">Lokaal:{{room.name}}</p>
-  <!--<input id="pop" type="range" min="0" max="{{capacity}}" value="{{crowd}}">-->
+<!--<span routerLink="/room/{{room.id}}">-->
+<span (click)="toggleSelect()">
+  <label *ngIf="naam">Lokaal:{{room.name}}</label>
   <img *ngIf="drukte" [style.background-color]="updateColor()" src="../../../assets/crowd.png"/>
-  <div *ngIf="drukte">{{occupied !== 2 ? '' : room.crowd + '/' + room.capacity}}{{occupied === 1 ? timer : ''}}{{occupied == 0 ? 'vrij' : ''}}</div>
+  <div
+    *ngIf="drukte">{{occupied !== 2 ? '' : room.crowd + '/' + room.capacity}}{{occupied === 1 ? timer : ''}}{{occupied == 0 ? 'vrij' : ''}}</div>
   <img *ngIf="type" src="../../../assets/{{room.type}}.png" onerror="this.src='../../../assets/404.png'"/>
-<img *ngIf="room.beamer && beamer_" src="../../../assets/beamer.png"/>
+  <img *ngIf="room.beamer && beamer_" src="../../../assets/beamer.png"/>
+  <p (click)="toggleSelect()" *ngIf="(room.type==='cafetaria'||room.type==='study')&&selected"><label>Crowd:</label>
+    <input type="range" [(ngModel)]="room.crowd" name="crowd" id="crowd" min="0" value="{{room.crowd}}"
+           max="{{room.capacity}}" (ngModelChange)="saverange($event)">
+    <img routerLink="/room/{{room.id}}" *ngIf="selected" src="../../../assets/edit.png" class="edit">
+  </p>
+  <p (click)="toggleSelect()" *ngIf="(room.type==='aula'||room.type==='classroom'||room.type==='conference')&&selected">
+    <label>Reserveer hier:</label>
+    <input type="button" (click)="reserve(1)" value="1h">
+    <input type="button" (click)="reserve(2)" value="2h">
+    <input type="button" (click)="reserve(3)" value="3h">
+    <img routerLink="/room/{{room.id}}" *ngIf="selected" src="../../../assets/edit.png" class="edit">
+  </p>
 </span>
+

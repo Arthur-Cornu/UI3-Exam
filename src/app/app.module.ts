@@ -9,8 +9,17 @@ import {ListItemComponent} from './components/list-item/list-item.component';
 import {HttpClientModule} from '@angular/common/http';
 import {InMemoryDataService} from '../services/in-memory-data.service';
 import {HttpClientInMemoryWebApiModule} from 'angular-in-memory-web-api';
-import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
-import { FilterComponent } from './components/filter/filter.component';
+import {NgMultiSelectDropDownModule} from 'ng-multiselect-dropdown';
+import {FilterComponent} from './components/filter/filter.component';
+import {DetailComponent} from './components/detail/detail.component';
+import {RouterModule, Routes} from '@angular/router';
+import { RoomDisplayComponent } from './components/room-display/room-display.component';
+import { MapComponent } from './components/map/map.component';
+
+const routing: Routes = [
+  {path: 'room/:id', component: DetailComponent},
+  {path: '**', component: RoomDisplayComponent}
+];
 
 @NgModule({
   declarations: [
@@ -19,6 +28,9 @@ import { FilterComponent } from './components/filter/filter.component';
     RoomMenuComponent,
     ListItemComponent,
     FilterComponent,
+    DetailComponent,
+    RoomDisplayComponent,
+    MapComponent,
   ],
   imports: [
     FormsModule,
@@ -26,6 +38,9 @@ import { FilterComponent } from './components/filter/filter.component';
     HttpClientModule,
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService),
     NgMultiSelectDropDownModule.forRoot(),
+    RouterModule.forRoot(
+      routing, {enableTracing: false}
+    ),
   ],
   providers: [],
   bootstrap: [AppComponent]

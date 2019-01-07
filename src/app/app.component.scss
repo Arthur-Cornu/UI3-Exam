@@ -1,7 +1,4 @@
-app-header {
-  display: flex;
-  grid-area: header;
-}
+
 footer {
   grid-area: footer;
   min-height: 2em;
@@ -9,6 +6,7 @@ footer {
 }
 body{
   grid-area: list;
+  width: 100%;
 }
 @media screen and (min-width: 480px) {
   /*DESKTOP*/

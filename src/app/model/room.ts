@@ -3,7 +3,6 @@ import {Reservation} from './reservation';
 export class Room {
   id: number;
   name: string;
-  description: string;
   capacity: number;
   crowd: number;
   beamer: boolean;
@@ -18,7 +17,6 @@ export class Room {
   constructor() {
     this.id = -1;
     this.name = '';
-    this.description = '';
     this.type = '';
     this.capacity = 1;
     this.crowd = 0;

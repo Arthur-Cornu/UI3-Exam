@@ -1,0 +1,24 @@
+<form (ngSubmit)="submitFunction()">
+   <p><label>Naam:</label><input type="text" [(ngModel)]="room.name" name="name" id="name"></p>
+   <p><label>Type:</label><input type="text" [(ngModel)]="room.type" name="type" id="type"></p>
+   <p><label>Floor:</label><input type="number" [(ngModel)]="room.floor" name="floor" id="floor"></p>
+   <p><label>Beamer:</label><input class="toggle" type="checkbox" [(ngModel)]="room.beamer" name="beamer" id="beamer"></p>
+   <p *ngIf="room.type==='cafetaria'||room.type==='study'"><label>Capacity:</label><input type="number" [(ngModel)]="room.capacity" name="capacity" id="capacity"></p>
+   <p *ngIf="room.type==='cafetaria'||room.type==='study'"><label>Crowd:</label><input type="range" [(ngModel)]="room.crowd" name="crowd" id="crowd" min="0" value="{{room.crowd}}" max="{{room.capacity}}"></p>
+   <p class="reserveer" *ngIf="room.type==='aula'||room.type==='classroom'||room.type==='conference'">
+     <label>Reserveer hier:</label>
+     <input type="button" (click)="reserve(1)" value="1h">
+     <input type="button" (click)="reserve(2)" value="2h">
+     <input type="button" (click)="reserve(3)" value="3h">
+   </p>
+   <p class="reserveer" *ngIf="room.type==='aula'||room.type==='classroom'||room.type==='conference'">
+     <label>In:</label>
+     <input [(ngModel)]="hour" type="number" name="hours">
+     <var>h</var>
+   </p>
+   <p><label>x:</label><input type="number" [(ngModel)]="room.x" name="x" id="x"></p>
+   <p><label>y:</label><input type="number" [(ngModel)]="room.y" name="y" id="y"></p>
+   <p><label>height:</label><input type="number" [(ngModel)]="room.height" name="height" id="height"></p>
+   <p><label>width:</label><input type="number" [(ngModel)]="room.width" name="width" id="width"></p>
+   <p><button type="submit">submit</button></p>
+</form>

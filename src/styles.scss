@@ -14,15 +14,7 @@ app-root {
   grid-template-areas: 'header' 'menu' 'list' 'footer';
   grid-template-rows: 80px auto 1fr;
 }
-app-room-menu{
-  grid-area: menu;
+router-outlet{
+  width: 100%;
 }
-app-list-item{
-  grid-area: list;
-}
-@media screen and (min-width: 480px) {
-  /*DESKTOP*/
-  app-root {
-    grid-template-areas: 'header header' 'menu menu' 'list detail';
-  }
-}
+

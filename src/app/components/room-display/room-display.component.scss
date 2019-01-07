@@ -1,0 +1,17 @@
+app-header {
+  display: flex;
+  grid-area: header;
+}
+app-room-menu{
+  grid-area: menu;
+}
+app-list-item{
+  grid-area: list;
+}
+
+@media screen and (min-width: 480px) {
+  /*DESKTOP*/
+  app-root {
+    grid-template-areas: 'header header' 'menu menu' 'list detail';
+  }
+}

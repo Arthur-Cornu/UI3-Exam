@@ -17,21 +17,26 @@ span {
     color: #cfcfcf;
   }
 
-  p {
+  label {
     margin: auto 1%;
     color: #aeaeae;
     position: relative;
   }
 
+  p {
+    width: 100%;
+  }
+
+  flex-wrap: wrap;
   box-sizing: border-box;
   display: flex;
-  margin: 3% 2%;
-
+  margin: 0.5rem 0.5rem;
 }
 
 input {
   height: 100%;
 }
+
 
 img {
   box-sizing: border-box;
@@ -41,4 +46,11 @@ img {
   padding: 2px;
   background: #cfcfcf;
   border-radius: 50%;
+}
+
+.edit {
+  position: absolute;
+  cursor: pointer;
+  bottom: 0;
+  right: 0;
 }
