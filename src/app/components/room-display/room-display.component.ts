@@ -14,11 +14,10 @@ export class RoomDisplayComponent implements OnInit {
   private rooms: Room[];
   private filteredRooms: Room[];
   private beamer_ = false;
-  private bezet_ = true;
-  private capaciteit_ = false;
-  private drukte_ = true;
-  private naam_ = true;
-  private type_ = true;
+  private bezet_ = false;
+  private drukte_ = false;
+  private naam_ = false;
+  private type_ = false;
   public selectedId: number;
   @Output() goDeselectItem = new EventEmitter<number>();
 
