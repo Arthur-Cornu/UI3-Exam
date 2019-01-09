@@ -10,5 +10,6 @@
                  [style.width]="room.width+'px'"
                  [style.top]="room.y+'px'"
                  [style.left]="room.x+'px'"
+                 (goDeselect)="goDeselect.emit($event)"
   ></app-list-item>
 </div>

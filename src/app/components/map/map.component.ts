@@ -1,4 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Room} from '../../model/room';
 
 @Component({
@@ -13,6 +13,7 @@ export class MapComponent implements OnInit {
   @Input() drukte = true;
   @Input() naam = true;
   @Input() type = true;
+  @Output() goDeselect = new EventEmitter<number>();
 
   constructor() {
   }

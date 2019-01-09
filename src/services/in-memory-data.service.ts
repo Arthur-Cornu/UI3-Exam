@@ -207,17 +207,7 @@ export class InMemoryDataService implements InMemoryDbService {
         'width': 300,
         'height': 200,
         'beamer': false,
-      }, {
-        'id': 106,
-        'name': 'GR106',
-        'type': 'classroom',
-        'floor': 1,
-        'x': 1290,
-        'y': 0,
-        'width': 270,
-        'height': 320,
-        'beamer': true,
-      }, {
+      },  {
         'id': 107,
         'name': 'GR107',
         'type': 'classroom',
@@ -238,19 +228,7 @@ export class InMemoryDataService implements InMemoryDbService {
         'height': 222,
         'beamer': true,
       },
-      {
-        'id': 109,
-        'name': 'GR109',
-        'type': 'cafetaria',
-        'floor': 1,
-        'x': 1020,
-        'y': 670,
-        'width': 220,
-        'capacity': 22,
-        'crowd': 20,
-        'height': 222,
-        'beamer': false,
-      }, {
+       {
         'id': 110,
         'name': 'GR110',
         'type': 'study',

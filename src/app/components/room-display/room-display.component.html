@@ -14,6 +14,8 @@
                  [type]="type_"
                  [naam]="naam_"
                  [drukte]="drukte_"
+                 (goDeselect)="setSlectedId($event)"
+                 [selected]="selectedId === room.id"
   ></app-list-item>
 </div>
 
@@ -24,5 +26,6 @@
            [type]="type_"
            [naam]="naam_"
            [drukte]="drukte_"
+           (goDeselect)="setSlectedId($event)"
   ></app-map>
 </div>

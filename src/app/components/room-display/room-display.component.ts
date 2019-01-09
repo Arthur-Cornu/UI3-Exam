@@ -1,6 +1,7 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 import {Room} from '../../model/room';
 import {RoomService} from '../../../services/room.service';
+import {el} from '@angular/platform-browser/testing/src/browser_util';
 
 @Component({
   selector: 'app-room-display',
@@ -18,6 +19,8 @@ export class RoomDisplayComponent implements OnInit {
   private drukte_ = true;
   private naam_ = true;
   private type_ = true;
+  public selectedId: number;
+  @Output() goDeselectItem = new EventEmitter<number>();
 
   constructor(private roomService: RoomService) {
     this.isList = true;
@@ -68,5 +71,8 @@ export class RoomDisplayComponent implements OnInit {
     console.log(this.filteredRooms);
   }
 
+  setSlectedId(id: number) {
+    this.selectedId = id;
+  }
 
 }

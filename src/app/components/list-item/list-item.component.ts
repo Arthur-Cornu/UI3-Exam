@@ -1,8 +1,9 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Color} from '../../model/color';
 import {Room} from '../../model/room';
 import {Reservation} from '../../model/reservation';
 import {RoomService} from '../../../services/room.service';
+import {Observable, Subscription} from 'rxjs';
 
 
 @Component({
@@ -21,7 +22,17 @@ export class ListItemComponent implements OnInit {
   occupied: number;
   currentReservation: Reservation;
   timer: String;
-  selected = false;
+  source = new Observable(observer => {
+    const id = setTimeout(() => observer.next(), 1000);
+    return () => clearTimeout(id);
+  });
+  @Input() selected = false;
+  sub = this.source.subscribe(() => {
+    if (this.selected) {
+      this.selected = !this.selected;
+    }
+  });
+  @Output() goDeselect = new EventEmitter<number>();
   @Input() beamer_ = false;
   @Input() bezet = true;
   @Input() drukte = true;
@@ -34,7 +45,7 @@ export class ListItemComponent implements OnInit {
     this.currentReservation = null;
     this.checkForOccupied();
     this.updateColor();
-    setInterval(() => this.setTime(), 1000);
+    setInterval(() => this.setTime(), 60000);
   }
 
   updateColor() {
@@ -93,6 +104,13 @@ export class ListItemComponent implements OnInit {
 
   toggleSelect() {
     this.selected = !this.selected;
+    this.goDeselect.emit(this.room.id);
+    this.sub.unsubscribe();
+    this.sub = this.source.subscribe(() => {
+      if (this.selected) {
+        this.selected = !this.selected;
+      }
+    });
   }
 
   saverange(val: number) {
