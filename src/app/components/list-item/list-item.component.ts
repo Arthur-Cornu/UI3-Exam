@@ -23,7 +23,7 @@ export class ListItemComponent implements OnInit {
   currentReservation: Reservation;
   timer: String;
   source = new Observable(observer => {
-    const id = setTimeout(() => observer.next(), 1000);
+    const id = setTimeout(() => observer.next(), 60000);
     return () => clearTimeout(id);
   });
   @Input() selected = false;

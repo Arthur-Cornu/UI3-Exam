@@ -38,6 +38,9 @@ export class FilterComponent implements OnInit {
       } else {
         this.naam_ = false;
       }
+    } else {
+      this.naam_ = true;
+      this.toggle.emit('naam_');
     }
     if (localStorage.getItem('type_')) {
       if (localStorage.getItem('type_') === 'true') {
@@ -46,6 +49,9 @@ export class FilterComponent implements OnInit {
       } else {
         this.type_ = false;
       }
+    } else {
+      this.type_ = true;
+      this.toggle.emit('type_');
     }
     if (localStorage.getItem('beamer_')) {
       if (localStorage.getItem('beamer_') === 'true') {
@@ -62,6 +68,9 @@ export class FilterComponent implements OnInit {
       } else {
         this.drukte_ = false;
       }
+    } else {
+      this.drukte_ = true;
+      this.toggle.emit('drukte_');
     }
   }
 }
