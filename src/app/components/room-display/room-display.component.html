@@ -18,5 +18,11 @@
 </div>
 
 <div *ngIf="!isList" id="map-items">
-  map
+  <app-map [rooms]="rooms"
+           [beamer_]="beamer_"
+           [bezet]="bezet_"
+           [type]="type_"
+           [naam]="naam_"
+           [drukte]="drukte_"
+  ></app-map>
 </div>

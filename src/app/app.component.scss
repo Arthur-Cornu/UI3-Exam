@@ -4,10 +4,19 @@ footer {
   min-height: 2em;
   position: relative;
 }
-body{
+
+body {
   grid-area: list;
   width: 100%;
 }
+
+div {
+  width: 100%;
+  router-outlet {
+    width: 100%;
+  }
+}
+
 @media screen and (min-width: 480px) {
   /*DESKTOP*/
 }

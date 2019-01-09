@@ -1,3 +1,14 @@
-<p>
-  map works!
-</p>
+<div id="canvas">
+  <app-list-item *ngFor="let room of rooms"
+                 [room]="room"
+                 [beamer_]="beamer_"
+                 [bezet]="bezet"
+                 [type]="type"
+                 [naam]="naam"
+                 [drukte]="drukte"
+                 [style.height]="room.height+'px'"
+                 [style.width]="room.width+'px'"
+                 [style.top]="room.y+'px'"
+                 [style.left]="room.x+'px'"
+  ></app-list-item>
+</div>
