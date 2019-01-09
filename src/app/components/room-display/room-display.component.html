@@ -7,7 +7,7 @@
 >
 </app-room-menu>
 <div *ngIf="isList" id="list-items">
-  <app-list-item *ngFor="let room of rooms"
+  <app-list-item *ngFor="let room of filteredRooms"
                  [room]="room"
                  [beamer_]="beamer_"
                  [bezet]="bezet_"
@@ -18,7 +18,7 @@
 </div>
 
 <div *ngIf="!isList" id="map-items">
-  <app-map [rooms]="rooms"
+  <app-map [rooms]="filteredRooms"
            [beamer_]="beamer_"
            [bezet]="bezet_"
            [type]="type_"

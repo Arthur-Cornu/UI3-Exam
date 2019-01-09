@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Room} from '../../model/room';
 import {RoomService} from '../../../services/room.service';
 
@@ -11,6 +11,7 @@ export class RoomDisplayComponent implements OnInit {
   private isList: boolean;
   private floor: number;
   private rooms: Room[];
+  private filteredRooms: Room[];
   private beamer_ = false;
   private bezet_ = true;
   private capaciteit_ = false;
@@ -22,10 +23,15 @@ export class RoomDisplayComponent implements OnInit {
     this.isList = true;
     this.roomService.getRooms()
       .subscribe(
-        room => this.rooms = room,
+        room => {
+          this.rooms = room;
+          this.getRooms();
+        },
         error => {
           console.log(error as string);
         });
+    this.floor = 0;
+
   }
 
   list() {
@@ -37,11 +43,17 @@ export class RoomDisplayComponent implements OnInit {
   }
 
   up() {
-    this.floor = this.floor++;
+    if (this.rooms.find(x => x.floor === (this.floor + 1))) {
+      this.floor = this.floor + 1;
+    }
+    this.getRooms();
   }
 
   down() {
-    this.floor = this.floor--;
+    if (this.rooms.find(x => x.floor === (this.floor - 1))) {
+      this.floor = this.floor - 1;
+    }
+    this.getRooms();
   }
 
   setSetting(event: string) {
@@ -49,6 +61,11 @@ export class RoomDisplayComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  getRooms() {
+    this.filteredRooms = this.rooms.filter(room => room.floor === this.floor);
+    console.log(this.filteredRooms);
   }
 
 
