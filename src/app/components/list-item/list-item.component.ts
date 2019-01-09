@@ -45,7 +45,7 @@ export class ListItemComponent implements OnInit {
     this.currentReservation = null;
     this.checkForOccupied();
     this.updateColor();
-    setInterval(() => this.setTime(), 60000);
+    setInterval(() => this.setTime(), 1000);
   }
 
   updateColor() {
